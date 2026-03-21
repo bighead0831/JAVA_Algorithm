@@ -7,7 +7,8 @@
 ---
 
 ## 🚀 1. Scanner vs BufferedReader
-자바의 입출력 방식에 따른 성능 차이를 분석한 결과입니다. 100만 개 이상의 데이터를 처리할 때는 **BufferedReader** 사용이 필수적입니다.
+자바의 입출력 방식에 따른 성능 차이
+-> 100만 개 이상의 데이터를 처리할 때는 **BufferedReader** 사용이 필수적!
 
 | 특징 | Scanner | BufferedReader |
 | :--- | :--- | :--- |
@@ -17,19 +18,19 @@
 | **스레드 안전** | No | **Yes (Thread-safe)** |
 | **입력 방식** | 정규 표현식 기반 파싱 | 단순 문자열 읽기 (Reading) |
 
-> **💡 핵심 요약:** `Scanner`는 편리하지만 정규식 분석 과정에서 비용이 많이 듭니다. 반면 `BufferedReader`는 버퍼를 이용해 한꺼번에 읽어오기 때문에 속도가 매우 빠릅니다.
+> **💡 핵심 요약:** `Scanner`는 편리하지만 정규식 분석 과정에서 비용이 많이 든다. 반면 `BufferedReader`는 버퍼를 이용해 한꺼번에 읽어오기 때문에 속도가 매우 빠르다.
 
 ---
 
 ## 🧩 2. StringTokenizer 활용
-`BufferedReader.readLine()`은 한 줄을 통째로 읽어오기 때문에, 공백으로 구분된 숫자들을 하나씩 꺼내기 위해 `StringTokenizer`를 사용했습니다.
+`BufferedReader.readLine()`은 한 줄을 통째로 읽어오기 때문에, 공백으로 구분된 숫자들을 하나씩 꺼내기 위해 `StringTokenizer`를 사용한다.
 
-- `split(" ")`보다 `StringTokenizer`가 성능상 우위에 있어 알고리즘 풀이에서 선호됩니다.
+- `split(" ")`보다 `StringTokenizer`가 성능상 우위에 있어 알고리즘 풀이에서 선호한다.
 
 ---
 
 ## ⚠️ 3. 자바 예외 처리 (Checked Exception)
-자바는 입출력 시 발생할 수 있는 오류를 예방하기 위해 `IOException` 처리를 강제합니다.
+자바는 입출력 시 발생할 수 있는 오류를 예방하기 위해 `IOException` 처리를 강제한다.
 
 | 구분 | throws (책임 전가) | try-catch (직접 해결) |
 | :--- | :--- | :--- |
